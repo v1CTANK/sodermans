@@ -1,0 +1,159 @@
+
+/* Global resets */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #f4f4f8; color: #333; line-height: 1.6; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+/* Navigation */
+header { position: fixed; top: 0; width: 100%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 100; height: 60px; }
+.nav { display: flex; align-items: center; justify-content: center; height: 60px; position: relative; }
+.logo-link { position: absolute; left: 20px; }
+.logo { height: 40px; }
+.nav-list { list-style: none; display: flex; gap: 2rem; }
+.nav-list li { position: relative; }
+.nav-list a { color: #000; text-decoration: none; font-weight: 600; }
+.nav-list a:hover { color: #e53e3e; }
+.nav-toggle { display: none; }
+
+/* Dropdown */
+.dropdown-parent:hover > .dropdown { list-style: none; margin: 0; padding: 0; display: block; }
+.dropdown { list-style: none; margin: 0; padding: 0; display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #ddd; padding: 0.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.dropdown li a { display: block; padding: 0.5rem 1rem; color: #000; text-decoration: none; }
+.dropdown li a:hover { background: #f4f4f4; color: #e53e3e; }
+
+/* Mobile nav */
+@media(max-width: 768px) {
+  .nav-toggle { display: block; position: absolute; right: 20px; top: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+  .nav-list { display: none; flex-direction: column; position: absolute; top: 60px; right: 20px; background: #fff; padding: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .nav-list.active { display: flex; }
+}
+
+/* Hero (home page) */
+.hero { position: relative; height: 100vh; margin-top: 60px; overflow: hidden; }
+.hero-img { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+.hero-text { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 1rem; }
+.hero-text h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+.hero-text p { font-size: 1.25rem; margin-bottom: 1.5rem; }
+.hero-buttons { display: flex; gap: 1rem; }
+.btn-offer { background: #e53e3e; color: #fff; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; }
+.btn-more { background: #fff; color: #e53e3e; padding: 0.75rem 1.5rem; border: 1px solid #e53e3e; border-radius: 4px; text-decoration: none; font-weight: 600; }
+.hero-buttons a:hover { opacity: 0.8; }
+
+/* Services page cards */
+.cards { display: flex; flex-direction: column; gap: 2rem; margin: 120px auto 120px; max-width: 800px; }
+.card { display: flex; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden; transition: background 0.3s, transform 0.3s; width: 100%; }
+.card:hover { background: #eee; transform: translateY(-5px); }
+.card img { width: 40%; object-fit: cover; }
+.card .card-text { padding: 1.5rem; width: 60%; }
+.card .card-text h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.card .card-text p { font-size: 1.1rem; line-height: 1.6; }
+
+/* Om Oss page */
+.about-hero { display: none; }
+.about-card { display: flex; gap: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 100px auto; max-width: 1000px; padding: 2rem; }
+.about-card .left { flex: 0 0 300px; text-align: center; }
+.about-card .left img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
+.about-card .left h3 { margin-bottom: 0.5rem; }
+.about-card .left p { margin-bottom: 0.5rem; font-weight: bold; }
+.about-card .right { flex: 1; }
+.about-card .right h2 { margin-bottom: 1rem; font-size: 2rem; }
+.about-card .right p { margin-bottom: 1rem; line-height: 1.6; }
+
+/* Footer */
+.footer { background: #222; color: #eee; padding: 2rem 0; text-align: center; }
+.footer a { color: #eee; text-decoration: underline; }
+.footer a:hover { opacity: 0.8; }
+
+
+/* Styled CTA on Om Oss page */
+.about-cta {
+  background: #333;
+  color: #fff;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  max-width: 600px;
+  border-radius: 8px;
+  text-align: center;
+}
+.about-cta p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.about-cta .btn {
+  margin: 0 0.5rem;
+}
+.about-cta .btn-primary {
+  background: #e53e3e;
+  color: #fff;
+}
+.about-cta .btn-secondary {
+  background: #fff;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+}
+.about-cta .btn, .about-cta .btn:hover {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.about-cta .btn:hover {
+  opacity: 0.9;
+}
+
+/* Full-width white CTA section */
+.about-cta {
+  background: #fff !important;
+  color: #333 !important;
+  max-width: none !important;
+  width: 100% !important;
+  padding: 2rem 0 !important;
+  margin: 0 auto !important;
+  text-align: center;
+}
+.about-cta p {
+  color: #333 !important;
+}
+
+/* Form container styling */
+.form-container {
+  background: #fff;
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.form-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.form-container input,
+.form-container textarea,
+.form-container select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.form-container button {
+  display: inline-block;
+  background: #e53e3e;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.form-container button:hover {
+  opacity: 0.9;
+}
